@@ -1,4 +1,3 @@
-```markdown
 # Ride-Hailing GPS Stream Load Test
 
 This repository contains the WebSocket load testing module from our research on modern ride-hailing systems. It is designed to simulate 2,000 concurrent driver GPS WebSocket streams to evaluate the high-concurrency capacity of the distributed serverless architecture.
@@ -7,14 +6,19 @@ This repository contains the WebSocket load testing module from our research on 
 
 After establishing connections, the platform successfully stabilized at approximately **248.37 Requests Per Second (RPS)** with a **0% failure rate** on active streaming. The system demonstrated an exceptional median response time of merely **0.11 ms** and a 99th percentile (P99) latency of strictly **1 ms**, confirming the high-concurrency capability of the AWS serverless container architecture.
 
+📄 **[Click here to view the detailed full Locust load test report (PDF)](locust_test_result.pdf)**
+
 ### 📈 System Performance Under Load
 ![System Performance Under Load](load_test_result.png)
+
+*(Note: Ensure `load_test_result.png` is uploaded to the repository, or replace this line with a drag-and-drop generated link!)*
 
 ### 📋 Detailed Locust Load Testing Statistics (Table III)
 Below is the empirical validation data recorded during the maximum stress period:
 
-![Locust Load Testing Statistics]
 <img width="680" height="114" alt="table_3_stats" src="https://github.com/user-attachments/assets/fe7b4b02-0de2-477b-95f5-a06fe7976013" />
+
+---
 
 ## 🛠 Prerequisites (依赖安装)
 Ensure you have Python 3 installed. Clean up any existing conflicting websocket libraries and install the required ones:
@@ -22,57 +26,3 @@ Ensure you have Python 3 installed. Clean up any existing conflicting websocket 
 ```bash
 pip3 uninstall websocket -y
 pip3 install websocket-client websockets
-
-```
-
-## 🚀 How to Run (完整运行步骤)
-
-### Step 1: Start the WebSocket Server (启动服务器)
-
-Open a terminal window and run the server script:
-
-```bash
-python3 ws_server.py
-
-```
-
-You must see the output `WebSocket server started on ws://localhost:8765` to proceed.
-**⚠️ Note:** Keep this terminal window open and running.
-
-### Step 2: Verify the Server (验证服务器 - Optional)
-
-Open a new terminal window (Command+N) and run the following quick validation:
-
-```bash
-python3 -c "
-import websocket
-ws = websocket.create_connection('ws://localhost:8765')
-ws.send('hello')
-print('收到回复:', ws.recv())
-ws.close()
-"
-
-```
-
-You should see `收到回复: hello`.
-
-### Step 3: Start Locust (启动 Locust 测试)
-
-In the same secondary terminal window, start the Locust process:
-
-```bash
-python3 -m locust -f locustfile.py --host ws://localhost:8765
-
-```
-
-### Step 4: Run the Test via Web UI (通过浏览器面板开始测试)
-
-1. Open your browser and navigate to **http://localhost:8089**.
-2. Fill in the parameters:
-* **Users**: 2000
-* **Spawn rate**: 100
-
-
-3. Click "Start swarming" to observe the real-time load test results.
-
-```

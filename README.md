@@ -13,9 +13,10 @@ After establishing connections, the platform successfully stabilized at approxim
 ### 📋 Detailed Locust Load Testing Statistics (Table III)
 Below is the empirical validation data recorded during the maximum stress period:
 
-![Locust Load Testing Statistics](table_3_stats.png)
----
+![Locust Load Testing Statistics]
 
+<img width="680" height="114" alt="table_3_stats" src="https://github.com/user-attachments/assets/dd0c639e-fadf-4e8d-9829-757541f0fb3a" />
+---
 ## 🛠 Prerequisites (依赖安装)
 Ensure you have Python 3 installed. Clean up any existing conflicting websocket libraries and install the required ones:
 

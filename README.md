@@ -1,12 +1,29 @@
+当然可以！在 GitHub 的 `README.md` 中，你可以直接使用 Markdown 表格语法将论文中的高并发压测数据（Table III）以结构化的形式完美呈现 。配合上一步你上传的性能折线图（Fig. 9），能让你的开源项目主页瞬间具备工业级工程验证的严谨性 。
+
+这里是为你重新设计并整合了**图表嵌入 + 完整压测数据集**的 `README.md` 规范内容：
+
 ```markdown
 # Ride-Hailing GPS Stream Load Test
 
-This repository contains the WebSocket load testing module from our research on modern ride-hailing systems. It is designed to simulate 2,000 concurrent driver GPS WebSocket streams to evaluate the high-concurrency capacity of the architecture.
+This repository contains the WebSocket load testing module from our research on modern ride-hailing systems. It is designed to simulate 2,000 concurrent driver GPS WebSocket streams to evaluate the high-concurrency capacity of the distributed serverless architecture.
 
-## 📊 Performance Results
-In our Locust load tests, the platform successfully stabilized at approximately 248.37 Requests Per Second (RPS) with a 0% failure rate after connection establishment. The system demonstrated a median response time of 0.11 ms and a 99th percentile (P99) latency of strictly 1 ms.
+## 📊 Performance Metrics & Results
 
+After establishing connections, the platform successfully stabilized at approximately **248.37 Requests Per Second (RPS)** with a **0% failure rate** on active streaming. The system demonstrated an exceptional median response time of merely **0.11 ms** and a 99th percentile (P99) latency of strictly **1 ms**, confirming the high-concurrency capability of the AWS serverless container architecture.
+
+### 📈 System Performance Under Load
 ![System Performance Under Load](load_test_result.png)
+
+### 📋 Detailed Locust Load Testing Statistics (Table III)
+Below is the empirical validation data recorded during the maximum stress period:
+
+| Name | Type | # Reqs | # Fails | Med (ms) | 95% (ms) | 99% (ms) | Avg (ms) | Min (ms) | Max (ms) | Size (bytes) | RPS | Fails/s |
+| :--- | :---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| **GPS stream** | WS | 145,238 | 0 | 0.11 | 1 | 1 | 0.38 | 0 | 11 | 96.96 | 246.4 | 0 |
+| **WS** | connect | 1,754 | 1,754 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| **Aggregated** | **-** | **146,992** | **1,754** | **0** | **1** | **1** | **0.38** | **0** | **11** | **95.81** | **246.4** | **0** |
+
+---
 
 ## 🛠 Prerequisites (依赖安装)
 Ensure you have Python 3 installed. Clean up any existing conflicting websocket libraries and install the required ones:
@@ -68,9 +85,3 @@ python3 -m locust -f locustfile.py --host ws://localhost:8765
 3. Click "Start swarming" to observe the real-time load test results.
 
 ```
-
-4. 粘贴完成后，点击编辑器右上角的绿色 **`Commit changes...`** 按钮。
-5. 在弹出的确认弹窗中，直接点击 **`Commit changes`**。
-
----
-

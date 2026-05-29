@@ -13,12 +13,7 @@ After establishing connections, the platform successfully stabilized at approxim
 ### 📋 Detailed Locust Load Testing Statistics (Table III)
 Below is the empirical validation data recorded during the maximum stress period:
 
-| Name | Type | # Reqs | # Fails | Med (ms) | 95% (ms) | 99% (ms) | Avg (ms) | Min (ms) | Max (ms) | Size (bytes) | RPS | Fails/s |
-| :--- | :---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| **GPS stream** | WS | 145,238 | 0 | 0.11 | 1 | 1 | 0.38 | 0 | 11 | 96.96 | 246.4 | 0 |
-| **WS** | connect | 1,754 | 1,754 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| **Aggregated** | **-** | **146,992** | **1,754** | **0** | **1** | **1** | **0.38** | **0** | **11** | **95.81** | **246.4** | **0** |
-
+![Locust Load Testing Statistics](table_3_stats.png)
 ---
 
 ## 🛠 Prerequisites (依赖安装)

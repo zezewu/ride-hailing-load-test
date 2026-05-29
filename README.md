@@ -1,7 +1,3 @@
-当然可以！在 GitHub 的 `README.md` 中，你可以直接使用 Markdown 表格语法将论文中的高并发压测数据（Table III）以结构化的形式完美呈现 。配合上一步你上传的性能折线图（Fig. 9），能让你的开源项目主页瞬间具备工业级工程验证的严谨性 。
-
-这里是为你重新设计并整合了**图表嵌入 + 完整压测数据集**的 `README.md` 规范内容：
-
 ```markdown
 # Ride-Hailing GPS Stream Load Test
 

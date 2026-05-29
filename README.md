@@ -14,9 +14,8 @@ After establishing connections, the platform successfully stabilized at approxim
 Below is the empirical validation data recorded during the maximum stress period:
 
 ![Locust Load Testing Statistics]
+<img width="680" height="114" alt="table_3_stats" src="https://github.com/user-attachments/assets/fe7b4b02-0de2-477b-95f5-a06fe7976013" />
 
-<img width="680" height="114" alt="table_3_stats" src="https://github.com/user-attachments/assets/dd0c639e-fadf-4e8d-9829-757541f0fb3a" />
----
 ## 🛠 Prerequisites (依赖安装)
 Ensure you have Python 3 installed. Clean up any existing conflicting websocket libraries and install the required ones:
 
